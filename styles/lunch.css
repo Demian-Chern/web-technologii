@@ -1,0 +1,97 @@
+/* Страница «Собрать ланч» */
+
+.menu {
+	margin-top: 10px;
+	padding: 0 0 40px 0;
+}
+
+.menu + .menu {
+	margin-top: 20px;
+}
+
+/* Сетка блюд */
+.menu__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+/* Карточка блюда */
+.dish {
+	display: flex;
+	flex-direction: column;
+	padding: 30px 40px;
+	border: 2px solid transparent;
+	border-radius: 35px;
+	background-color: white;
+	filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+	cursor: pointer;
+}
+
+.dish:hover {
+	border-color: tomato;
+}
+
+.dish__img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: 35px;
+}
+
+.dish__price {
+	margin: 20px 0 10px 0;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+/* flex-grow растягивает название, поэтому вес и кнопка всегда внизу на одном уровне */
+.dish__name {
+	flex-grow: 1;
+	margin: 0;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.dish__weight {
+	margin: 10px 0 0 0;
+	color: #888888;
+}
+
+.dish__button {
+	align-self: flex-start;
+	margin-top: 20px;
+	padding: 10px 30px;
+	border: none;
+	border-radius: 10px;
+	background-color: #f1eee9;
+	font-family: "Nunito", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #222222;
+	cursor: pointer;
+}
+
+/* Контекстный селектор: кнопка меняется при наведении на всю карточку */
+.dish:hover .dish__button {
+	background-color: tomato;
+	color: white;
+}
+
+/* Планшеты */
+@media (max-width: 800px) {
+	.menu__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Мобильные */
+@media (max-width: 600px) {
+	.menu__title {
+		text-align: center;
+	}
+
+	.menu__list {
+		grid-template-columns: 1fr;
+	}
+}

@@ -2,7 +2,15 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
+/* Прижимаем футер к низу окна, если контента мало */
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 	font-family: "Nunito", sans-serif;
@@ -23,12 +31,14 @@ body {
 }
 
 .header__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
 	margin-top: 25px;
 	padding: 0;
 }
 
 .header__link {
-	margin-right: 25px;
 	font-family: "Nunito", sans-serif;
 	font-size: 16px;
 	font-weight: 600;
@@ -40,8 +50,14 @@ body {
 	color: #ff6b4a;
 }
 
+/* Активный пункт меню */
+#active {
+	color: tomato;
+}
+
 /* Основной контент */
 .main {
+	flex-grow: 1;
 	margin: 0;
 	padding: 0 70px;
 }
@@ -138,8 +154,20 @@ body {
 	color: #ff6b4a;
 }
 
-/* Адаптивность */
-@media (max-width: 650px) {
+/* Адаптивность: планшеты */
+@media (max-width: 800px) {
+	.header__nav {
+		justify-content: space-between;
+	}
+
+	.about__img {
+		width: 500px;
+		max-width: 100%;
+	}
+}
+
+/* Адаптивность: мобильные */
+@media (max-width: 600px) {
 	.header {
 		padding: 20px 30px;
 	}
@@ -152,11 +180,35 @@ body {
 		padding: 20px 30px;
 	}
 
+	.header__title {
+		text-align: center;
+	}
+
+	.header__nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.header__link {
-		margin-right: 15px;
+		font-size: 20px;
 	}
 
 	.about__img {
+		width: 100%;
 		height: 250px;
+	}
+
+	.dishes__table th,
+	.dishes__table td {
+		font-size: 14px;
+	}
+}
+
+/* Адаптивность: маленькие экраны */
+@media (max-width: 400px) {
+	.dishes__table th,
+	.dishes__table td {
+		padding: 6px;
+		font-size: 12px;
 	}
 }
