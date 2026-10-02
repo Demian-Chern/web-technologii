@@ -32,82 +32,19 @@
 
 		<section class="menu" id="soups">
 			<h2 class="section-title menu__title">Супы</h2>
-			<div class="menu__list">
-				<div class="dish">
-					<img src="images/soup-1.jpg" alt="Сырный крем-суп" class="dish__img">
-					<p class="dish__price">190₽</p>
-					<p class="dish__name">Крем-суп с сырными шариками</p>
-					<p class="dish__weight">300 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/soup-2.jpg" alt="Том Ям" class="dish__img">
-					<p class="dish__price">365₽</p>
-					<p class="dish__name">Том Ям с креветками</p>
-					<p class="dish__weight">350 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/soup-3.jpg" alt="Норвежский суп" class="dish__img">
-					<p class="dish__price">270₽</p>
-					<p class="dish__name">Норвежский суп с лососем и сливками</p>
-					<p class="dish__weight">350 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
+			<div class="menu__list" data-category="soup">
 			</div>
 		</section>
 
 		<section class="menu" id="mains">
 			<h2 class="section-title menu__title">Главные блюда</h2>
-			<div class="menu__list">
-				<div class="dish">
-					<img src="images/main-1.jpg" alt="Куриное катсу с рисом" class="dish__img">
-					<p class="dish__price">340₽</p>
-					<p class="dish__name">Куриное катсу с рисом и соусом карри</p>
-					<p class="dish__weight">320 г</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/main-2.jpg" alt="Куриные крылья" class="dish__img">
-					<p class="dish__price">290₽</p>
-					<p class="dish__name">Острые куриные крылья</p>
-					<p class="dish__weight">250 г</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/main-3.jpg" alt="Лосось в глазури" class="dish__img">
-					<p class="dish__price">420₽</p>
-					<p class="dish__name">Лосось в пряной глазури</p>
-					<p class="dish__weight">200 г</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
+			<div class="menu__list" data-category="main">
 			</div>
 		</section>
 
 		<section class="menu" id="drinks">
 			<h2 class="section-title menu__title">Напитки</h2>
-			<div class="menu__list">
-				<div class="dish">
-					<img src="images/drink-1.jpg" alt="Лимонад с ягодами" class="dish__img">
-					<p class="dish__price">130₽</p>
-					<p class="dish__name">Лимонад с ягодами и лаймом</p>
-					<p class="dish__weight">300 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/drink-2.jpg" alt="Апельсиновая газировка" class="dish__img">
-					<p class="dish__price">100₽</p>
-					<p class="dish__name">Апельсиновая газировка</p>
-					<p class="dish__weight">330 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
-				<div class="dish">
-					<img src="images/drink-3.jpg" alt="Цитрусовый лимонад" class="dish__img">
-					<p class="dish__price">110₽</p>
-					<p class="dish__name">Цитрусовый лимонад</p>
-					<p class="dish__weight">330 мл</p>
-					<button type="button" class="dish__button">Добавить</button>
-				</div>
+			<div class="menu__list" data-category="drink">
 			</div>
 		</section>
 
@@ -120,34 +57,32 @@
 					<div class="order-form__block">
 						<h3 class="order-form__block-title">Ваш заказ</h3>
 
-						<div class="order-form__field">
-							<label for="soup" class="order-form__label">Суп</label>
-							<select id="soup" name="soup" class="order-form__select" required>
-								<option value="" selected>Выберите суп</option>
-								<option value="cream-soup">Крем-суп с сырными шариками</option>
-								<option value="tom-yam">Том Ям с креветками</option>
-								<option value="norwegian-soup">Норвежский суп с лососем и сливками</option>
-							</select>
-						</div>
+						<div class="order-summary">
+							<p class="order-summary__empty" id="order-empty">Ничего не выбрано</p>
 
-						<div class="order-form__field">
-							<label for="main" class="order-form__label">Главное блюдо</label>
-							<select id="main" name="main" class="order-form__select" required>
-								<option value="" selected>Выберите главное блюдо</option>
-								<option value="chicken-katsu">Куриное катсу с рисом и соусом карри</option>
-								<option value="spicy-wings">Острые куриные крылья</option>
-								<option value="salmon-glaze">Лосось в пряной глазури</option>
-							</select>
-						</div>
+							<div class="order-summary__item" id="order-soup" hidden>
+								<h4 class="order-summary__title">Суп</h4>
+								<p class="order-summary__value"></p>
+							</div>
 
-						<div class="order-form__field">
-							<label for="drink" class="order-form__label">Напиток</label>
-							<select id="drink" name="drink" class="order-form__select" required>
-								<option value="" selected>Выберите напиток</option>
-								<option value="berry-lemonade">Лимонад с ягодами и лаймом</option>
-								<option value="orange-soda">Апельсиновая газировка</option>
-								<option value="citrus-lemonade">Цитрусовый лимонад</option>
-							</select>
+							<div class="order-summary__item" id="order-main" hidden>
+								<h4 class="order-summary__title">Главное блюдо</h4>
+								<p class="order-summary__value"></p>
+							</div>
+
+							<div class="order-summary__item" id="order-drink" hidden>
+								<h4 class="order-summary__title">Напиток</h4>
+								<p class="order-summary__value"></p>
+							</div>
+
+							<div class="order-summary__total" id="order-total" hidden>
+								<h4 class="order-summary__title">Стоимость заказа</h4>
+								<p class="order-summary__value" id="order-total-value"></p>
+							</div>
+
+							<input type="hidden" name="soup" id="input-soup">
+							<input type="hidden" name="main" id="input-main">
+							<input type="hidden" name="drink" id="input-drink">
 						</div>
 
 						<div class="order-form__field">
@@ -216,6 +151,10 @@
 	<footer class="footer" id="footer">
 		<p class="footer__text">Позвонить нам: <a href="tel:+70000000000" class="footer__link">+7-000-000-00-00</a></p>
 	</footer>
+
+	<script src="scripts/dishes.js"></script>
+	<script src="scripts/display.js"></script>
+	<script src="scripts/order.js"></script>
 
 </body>
 

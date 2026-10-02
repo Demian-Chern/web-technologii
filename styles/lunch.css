@@ -95,3 +95,8 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+/* Выбранная карточка */
+.dish--selected {
+	border-color: tomato;
+}

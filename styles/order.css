@@ -167,3 +167,45 @@
 		flex-direction: column;
 	}
 }
+
+/* Скрытые элементы не должны перебиваться другими display */
+[hidden] {
+	display: none !important;
+}
+
+/* Состав заказа */
+.order-summary {
+	margin-bottom: 20px;
+}
+
+.order-summary__empty {
+	margin: 0;
+	color: #888888;
+}
+
+.order-summary__item,
+.order-summary__total {
+	margin-bottom: 20px;
+}
+
+.order-summary__item:last-child,
+.order-summary__total:last-child {
+	margin-bottom: 0;
+}
+
+.order-summary__title {
+	margin: 0 0 8px 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #888888;
+}
+
+.order-summary__value {
+	margin: 0;
+	font-size: 16px;
+}
+
+.order-summary__total .order-summary__value {
+	font-size: 20px;
+	font-weight: 700;
+}
