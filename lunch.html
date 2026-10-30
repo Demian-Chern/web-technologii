@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/lunch.css">
 	<link rel="stylesheet" href="styles/order.css">
+	<link rel="stylesheet" href="styles/combos.css">
 </head>
 
 <body>
@@ -30,21 +31,147 @@
 
 	<main class="main">
 
+		<section class="combos">
+			<h2 class="section-title combos__title">Доступные для заказа комбо</h2>
+
+			<div class="combos__list">
+				<div class="combo">
+					<div class="combo__item">
+						<img src="images/icons/soup.svg" alt="Суп" class="combo__img">
+						<p class="combo__caption">Суп</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/main.svg" alt="Главное блюдо" class="combo__img">
+						<p class="combo__caption">Главное блюдо</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/salad.svg" alt="Салат" class="combo__img">
+						<p class="combo__caption">Салат</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/drink.svg" alt="Напиток" class="combo__img">
+						<p class="combo__caption">Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo">
+					<div class="combo__item">
+						<img src="images/icons/soup.svg" alt="Суп" class="combo__img">
+						<p class="combo__caption">Суп</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/main.svg" alt="Главное блюдо" class="combo__img">
+						<p class="combo__caption">Главное блюдо</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/drink.svg" alt="Напиток" class="combo__img">
+						<p class="combo__caption">Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo">
+					<div class="combo__item">
+						<img src="images/icons/soup.svg" alt="Суп" class="combo__img">
+						<p class="combo__caption">Суп</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/salad.svg" alt="Салат" class="combo__img">
+						<p class="combo__caption">Салат</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/drink.svg" alt="Напиток" class="combo__img">
+						<p class="combo__caption">Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo">
+					<div class="combo__item">
+						<img src="images/icons/main.svg" alt="Главное блюдо" class="combo__img">
+						<p class="combo__caption">Главное блюдо</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/salad.svg" alt="Салат" class="combo__img">
+						<p class="combo__caption">Салат</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/drink.svg" alt="Напиток" class="combo__img">
+						<p class="combo__caption">Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo">
+					<div class="combo__item">
+						<img src="images/icons/main.svg" alt="Главное блюдо" class="combo__img">
+						<p class="combo__caption">Главное блюдо</p>
+					</div>
+					<div class="combo__item">
+						<img src="images/icons/drink.svg" alt="Напиток" class="combo__img">
+						<p class="combo__caption">Напиток</p>
+					</div>
+				</div>
+
+				<!-- десерт можно добавить к любому варианту -->
+				<div class="combo combo--dessert">
+					<div class="combo__item">
+						<img src="images/icons/dessert.svg" alt="Десерт" class="combo__img">
+						<p class="combo__caption">Десерт</p>
+						<p class="combo__note">Можно добавить к любому заказу</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="menu" id="soups">
-			<h2 class="section-title menu__title">Супы</h2>
+			<h2 class="section-title menu__title">Выберите суп</h2>
+			<div class="menu__filters" data-category="soup">
+				<button type="button" class="filter__button" data-kind="fish">рыбный</button>
+				<button type="button" class="filter__button" data-kind="meat">мясной</button>
+				<button type="button" class="filter__button" data-kind="veg">вегетарианский</button>
+			</div>
 			<div class="menu__list" data-category="soup">
 			</div>
 		</section>
 
 		<section class="menu" id="mains">
-			<h2 class="section-title menu__title">Главные блюда</h2>
+			<h2 class="section-title menu__title">Выберите главное блюдо</h2>
+			<div class="menu__filters" data-category="main">
+				<button type="button" class="filter__button" data-kind="fish">рыбное</button>
+				<button type="button" class="filter__button" data-kind="meat">мясное</button>
+				<button type="button" class="filter__button" data-kind="veg">вегетарианское</button>
+			</div>
 			<div class="menu__list" data-category="main">
 			</div>
 		</section>
 
+		<section class="menu" id="salads">
+			<h2 class="section-title menu__title">Выберите салат или стартер</h2>
+			<div class="menu__filters" data-category="salad">
+				<button type="button" class="filter__button" data-kind="fish">рыбный</button>
+				<button type="button" class="filter__button" data-kind="meat">мясной</button>
+				<button type="button" class="filter__button" data-kind="veg">вегетарианский</button>
+			</div>
+			<div class="menu__list" data-category="salad">
+			</div>
+		</section>
+
 		<section class="menu" id="drinks">
-			<h2 class="section-title menu__title">Напитки</h2>
+			<h2 class="section-title menu__title">Выберите напиток</h2>
+			<div class="menu__filters" data-category="drink">
+				<button type="button" class="filter__button" data-kind="cold">холодный</button>
+				<button type="button" class="filter__button" data-kind="hot">горячий</button>
+			</div>
 			<div class="menu__list" data-category="drink">
+			</div>
+		</section>
+
+		<section class="menu" id="desserts">
+			<h2 class="section-title menu__title">Выберите десерт</h2>
+			<div class="menu__filters" data-category="dessert">
+				<button type="button" class="filter__button" data-kind="small">маленькая порция</button>
+				<button type="button" class="filter__button" data-kind="medium">средняя порция</button>
+				<button type="button" class="filter__button" data-kind="large">большая порция</button>
+			</div>
+			<div class="menu__list" data-category="dessert">
 			</div>
 		</section>
 
@@ -70,8 +197,18 @@
 								<p class="order-summary__value"></p>
 							</div>
 
+							<div class="order-summary__item" id="order-salad" hidden>
+								<h4 class="order-summary__title">Салат или стартер</h4>
+								<p class="order-summary__value"></p>
+							</div>
+
 							<div class="order-summary__item" id="order-drink" hidden>
 								<h4 class="order-summary__title">Напиток</h4>
+								<p class="order-summary__value"></p>
+							</div>
+
+							<div class="order-summary__item" id="order-dessert" hidden>
+								<h4 class="order-summary__title">Десерт</h4>
 								<p class="order-summary__value"></p>
 							</div>
 
@@ -82,7 +219,9 @@
 
 							<input type="hidden" name="soup" id="input-soup">
 							<input type="hidden" name="main" id="input-main">
+							<input type="hidden" name="salad" id="input-salad">
 							<input type="hidden" name="drink" id="input-drink">
+							<input type="hidden" name="dessert" id="input-dessert">
 						</div>
 
 						<div class="order-form__field">
@@ -155,6 +294,8 @@
 	<script src="scripts/dishes.js"></script>
 	<script src="scripts/display.js"></script>
 	<script src="scripts/order.js"></script>
+	<script src="scripts/filter.js"></script>
+	<script src="scripts/validation.js"></script>
 
 </body>
 

@@ -100,3 +100,39 @@
 .dish--selected {
 	border-color: tomato;
 }
+
+/* Фильтры категорий */
+.menu__filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.filter__button {
+	padding: 8px 20px;
+	border: 2px solid #f1eee9;
+	border-radius: 10px;
+	background-color: #f1eee9;
+	font-family: "Nunito", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #222222;
+	cursor: pointer;
+}
+
+.filter__button:hover {
+	border-color: tomato;
+}
+
+.filter__button.active {
+	border-color: tomato;
+	background-color: tomato;
+	color: white;
+}
+
+@media (max-width: 600px) {
+	.menu__filters {
+		justify-content: center;
+	}
+}
