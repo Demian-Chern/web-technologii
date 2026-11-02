@@ -55,12 +55,3 @@ function showNotification(text) {
 	notification.append(message, button);
 	document.body.append(overlay, notification);
 }
-
-document.querySelector('.order-form').addEventListener('submit', event => {
-	const error = getOrderError();
-
-	if (error) {
-		event.preventDefault();
-		showNotification(error);
-	}
-});

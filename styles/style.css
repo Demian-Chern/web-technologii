@@ -2,6 +2,11 @@
 	box-sizing: border-box;
 }
 
+/* Скрытые элементы не должны перебиваться другими display */
+[hidden] {
+	display: none !important;
+}
+
 html {
 	height: 100%;
 }

@@ -168,19 +168,9 @@
 	}
 }
 
-/* Скрытые элементы не должны перебиваться другими display */
-[hidden] {
-	display: none !important;
-}
-
 /* Состав заказа */
 .order-summary {
 	margin-bottom: 20px;
-}
-
-.order-summary__empty {
-	margin: 0;
-	color: #888888;
 }
 
 .order-summary__item,
@@ -203,9 +193,35 @@
 .order-summary__value {
 	margin: 0;
 	font-size: 16px;
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
 }
 
 .order-summary__total .order-summary__value {
 	font-size: 20px;
 	font-weight: 700;
+}
+
+/* Страница «Оформить заказ» */
+.order-composition {
+	margin-top: 10px;
+	padding: 0 0 20px 0;
+}
+
+.order-composition__empty {
+	margin: 0;
+}
+
+.order-composition__link {
+	color: tomato;
+}
+
+/* Здесь действие только у кнопки «Удалить», а не у всей карточки */
+#order-dishes .dish {
+	cursor: default;
+}
+
+#order-dishes .dish:hover {
+	border-color: transparent;
 }

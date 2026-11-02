@@ -136,3 +136,46 @@
 		justify-content: center;
 	}
 }
+
+/* Панель перехода к оформлению: прилипает к низу окна, пока виден контент страницы */
+.order-panel {
+	position: sticky;
+	bottom: 20px;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 20px;
+	padding: 20px 40px;
+	border-radius: 35px;
+	background-color: white;
+	box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
+}
+
+.order-panel__total {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.order-panel__link {
+	padding: 12px 30px;
+	border-radius: 10px;
+	background-color: tomato;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+}
+
+.order-panel__link:hover {
+	background-color: #e0543a;
+}
+
+/* Состав заказа не подходит ни под одно комбо */
+.order-panel__link:not([href]) {
+	background-color: #f1eee9;
+	color: #888888;
+	cursor: not-allowed;
+}

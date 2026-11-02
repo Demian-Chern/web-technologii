@@ -12,7 +12,6 @@
 
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/lunch.css">
-	<link rel="stylesheet" href="styles/order.css">
 	<link rel="stylesheet" href="styles/combos.css">
 </head>
 
@@ -24,6 +23,7 @@
 		<nav class="header__nav">
 			<a href="index.html#about" class="header__link">О нас</a>
 			<a href="lunch.html" class="header__link" id="active">Собрать ланч</a>
+			<a href="order.html" class="header__link">Оформить заказ</a>
 			<a href="index.html#orders" class="header__link">Заказы</a>
 			<a href="#footer" class="header__link">Контакты</a>
 		</nav>
@@ -175,115 +175,10 @@
 			</div>
 		</section>
 
-		<section class="order-section" id="checkout">
-			<h2 class="section-title">Оформить заказ</h2>
-
-			<form class="order-form" method="POST" action="https://httpbin.org/post">
-				<div class="order-form__grid">
-
-					<div class="order-form__block">
-						<h3 class="order-form__block-title">Ваш заказ</h3>
-
-						<div class="order-summary">
-							<p class="order-summary__empty" id="order-empty">Ничего не выбрано</p>
-
-							<div class="order-summary__item" id="order-soup" hidden>
-								<h4 class="order-summary__title">Суп</h4>
-								<p class="order-summary__value"></p>
-							</div>
-
-							<div class="order-summary__item" id="order-main" hidden>
-								<h4 class="order-summary__title">Главное блюдо</h4>
-								<p class="order-summary__value"></p>
-							</div>
-
-							<div class="order-summary__item" id="order-salad" hidden>
-								<h4 class="order-summary__title">Салат или стартер</h4>
-								<p class="order-summary__value"></p>
-							</div>
-
-							<div class="order-summary__item" id="order-drink" hidden>
-								<h4 class="order-summary__title">Напиток</h4>
-								<p class="order-summary__value"></p>
-							</div>
-
-							<div class="order-summary__item" id="order-dessert" hidden>
-								<h4 class="order-summary__title">Десерт</h4>
-								<p class="order-summary__value"></p>
-							</div>
-
-							<div class="order-summary__total" id="order-total" hidden>
-								<h4 class="order-summary__title">Стоимость заказа</h4>
-								<p class="order-summary__value" id="order-total-value"></p>
-							</div>
-
-							<input type="hidden" name="soup" id="input-soup">
-							<input type="hidden" name="main" id="input-main">
-							<input type="hidden" name="salad" id="input-salad">
-							<input type="hidden" name="drink" id="input-drink">
-							<input type="hidden" name="dessert" id="input-dessert">
-						</div>
-
-						<div class="order-form__field">
-							<label for="comment" class="order-form__label">Комментарий к заказу</label>
-							<textarea id="comment" name="comment" class="order-form__textarea" rows="5" placeholder="Например: без лука"></textarea>
-						</div>
-					</div>
-
-					<div class="order-form__block">
-						<h3 class="order-form__block-title">Ваши данные</h3>
-
-						<div class="order-form__field">
-							<label for="name" class="order-form__label">Имя</label>
-							<input type="text" id="name" name="name" class="order-form__input" required>
-						</div>
-
-						<div class="order-form__field">
-							<label for="email" class="order-form__label">Email</label>
-							<input type="email" id="email" name="email" class="order-form__input" required>
-						</div>
-
-						<div class="order-form__checkbox">
-							<input type="checkbox" id="subscribe" name="subscribe" checked>
-							<label for="subscribe">Получать новости и акции на почту</label>
-						</div>
-
-						<div class="order-form__field">
-							<label for="phone" class="order-form__label">Телефон</label>
-							<input type="tel" id="phone" name="phone" class="order-form__input" required>
-						</div>
-
-						<div class="order-form__field">
-							<label for="address" class="order-form__label">Адрес доставки</label>
-							<input type="text" id="address" name="address" class="order-form__input" required>
-						</div>
-
-						<fieldset class="order-form__toggle">
-							<legend class="order-form__label">Когда доставить</legend>
-							<div class="order-form__toggle-option">
-								<input type="radio" id="delivery-asap" name="delivery-mode" value="asap" checked required>
-								<label for="delivery-asap">Как можно скорее</label>
-							</div>
-							<div class="order-form__toggle-option">
-								<input type="radio" id="delivery-scheduled" name="delivery-mode" value="scheduled">
-								<label for="delivery-scheduled">К точному времени</label>
-							</div>
-						</fieldset>
-
-						<div class="order-form__field">
-							<label for="delivery-time" class="order-form__label">Время доставки</label>
-							<input type="time" id="delivery-time" name="delivery-time" class="order-form__input" min="07:00" max="23:00" step="300">
-						</div>
-
-						<div class="order-form__actions">
-							<button type="reset" class="order-form__button order-form__button--reset">Сбросить</button>
-							<button type="submit" class="order-form__button order-form__button--submit">Отправить</button>
-						</div>
-					</div>
-
-				</div>
-			</form>
-		</section>
+		<div class="order-panel" id="order-panel" hidden>
+			<p class="order-panel__total">Итого: <span id="order-panel-total"></span></p>
+			<a class="order-panel__link" id="order-panel-link">Перейти к оформлению</a>
+		</div>
 
 	</main>
 
@@ -293,9 +188,10 @@
 
 	<script src="scripts/dishes.js"></script>
 	<script src="scripts/display.js"></script>
+	<script src="scripts/validation.js"></script>
 	<script src="scripts/order.js"></script>
 	<script src="scripts/filter.js"></script>
-	<script src="scripts/validation.js"></script>
+	<script src="scripts/lunch.js"></script>
 
 </body>
 

@@ -3,11 +3,11 @@ const API_KEY = '866a9480-db18-3e3e-86bd-9712e78b466c';
 
 // Категории: порядок вывода на странице и сообщение для пустой категории
 const categories = [
-	{ key: 'soup', emptyText: 'Блюдо не выбрано' },
-	{ key: 'main', emptyText: 'Блюдо не выбрано' },
-	{ key: 'salad', emptyText: 'Блюдо не выбрано' },
-	{ key: 'drink', emptyText: 'Напиток не выбран' },
-	{ key: 'dessert', emptyText: 'Десерт не выбран' }
+	{ key: 'soup', emptyText: 'Не выбран', apiField: 'soup_id' },
+	{ key: 'main', emptyText: 'Не выбрано', apiField: 'main_course_id' },
+	{ key: 'salad', emptyText: 'Не выбран', apiField: 'salad_id' },
+	{ key: 'drink', emptyText: 'Не выбран', apiField: 'drink_id' },
+	{ key: 'dessert', emptyText: 'Не выбран', apiField: 'dessert_id' }
 ];
 
 // API называет главные блюда 'main-course', а на странице категория называется 'main'
@@ -78,9 +78,10 @@ async function loadDishes() {
 			image: getDishImage(dish)
 		}));
 
-		displayDishes();
+		return true;
 	} catch (error) {
 		console.error('Не удалось загрузить блюда:', error);
 		showNotification('Не удалось загрузить блюда. Обновите страницу');
+		return false;
 	}
 }
