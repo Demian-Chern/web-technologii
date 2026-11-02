@@ -5,7 +5,7 @@ function createDishCard(dish) {
 	card.dataset.kind = dish.kind;
 
 	card.innerHTML = `
-		<img src="images/${dish.image}.jpg" alt="${dish.name}" class="dish__img">
+		<img src="${dish.image}" alt="${dish.name}" class="dish__img">
 		<p class="dish__price">${dish.price}₽</p>
 		<p class="dish__name">${dish.name}</p>
 		<p class="dish__weight">${dish.count}</p>
@@ -28,4 +28,5 @@ function displayDishes() {
 	});
 }
 
-displayDishes();
+// запускаем после подключения всех скриптов: при ошибке нужен showNotification из validation.js
+document.addEventListener('DOMContentLoaded', loadDishes);
