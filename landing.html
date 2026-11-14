@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Construct — доставка бизнес-ланчей</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+	<!-- ЛР 10: фреймворк Bootstrap 5 и иконки Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<!-- ЛР 10: свои стили только там, где не хватает классов Bootstrap -->
+	<link rel="stylesheet" href="styles/landing.css">
+</head>
+
+<body>
+
+	<!-- ЛР 10: навигация; на узких экранах меню сворачивается в кнопку (navbar-expand-lg + collapse) -->
+	<nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
+		<div class="container">
+			<a class="navbar-brand fw-bold fs-3" href="landing.html">Food Construct</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#landing-nav"
+				aria-controls="landing-nav" aria-expanded="false" aria-label="Открыть меню">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="landing-nav">
+				<ul class="navbar-nav ms-auto gap-lg-2">
+					<li class="nav-item"><a class="nav-link" href="#advantages">Преимущества</a></li>
+					<li class="nav-item"><a class="nav-link" href="#how">Как заказать</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html">О нас</a></li>
+					<li class="nav-item"><a class="nav-link" href="orders.html">Заказы</a></li>
+					<li class="nav-item ms-lg-2">
+						<a class="btn btn-brand px-4" href="lunch.html">Собрать ланч</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+
+		<!-- ЛР 10: hero section — название, описание и картинка -->
+		<section class="hero py-5">
+			<div class="container py-lg-4">
+				<div class="row align-items-center g-5">
+					<div class="col-lg-6 text-center text-lg-start">
+						<span class="badge rounded-pill text-bg-light text-brand fs-6 mb-3 px-3 py-2">
+							<i class="bi bi-clock"></i> Доставка с 7:00 до 23:00
+						</span>
+						<h1 class="display-4 fw-bold mb-3">
+							Бизнес-ланчи, которые вы <span class="text-brand">собираете сами</span>
+						</h1>
+						<p class="lead text-secondary mb-4">
+							Food Construct привозит горячие обеды в офис и домой по всей Москве.
+							Выберите суп, главное блюдо, салат, напиток и десерт, а мы доставим всё
+							к нужному времени.
+						</p>
+						<div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+							<a href="lunch.html" class="btn btn-brand btn-lg px-5">Собрать ланч</a>
+							<a href="#how" class="btn btn-outline-dark btn-lg px-5">Как это работает</a>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<img src="images/lunch.jpg" alt="Бизнес-ланч Food Construct" class="img-fluid rounded-5 shadow hero__img">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ЛР 10: преимущества; сетка 1 → 2 → 4 колонки в зависимости от ширины экрана -->
+		<section class="py-5" id="advantages">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold">Почему выбирают нас</h2>
+					<p class="text-secondary mb-0">Обед без лишних хлопот: вкусно, вовремя и по честной цене</p>
+				</div>
+
+				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+					<div class="col">
+						<div class="card h-100 border-0 shadow-sm rounded-4 text-center p-3">
+							<div class="card-body">
+								<div class="feature-icon mb-3"><i class="bi bi-alarm"></i></div>
+								<h3 class="h5 fw-bold">Точно ко времени</h3>
+								<p class="card-text text-secondary">Привезём обед к выбранному времени или как можно скорее.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="card h-100 border-0 shadow-sm rounded-4 text-center p-3">
+							<div class="card-body">
+								<div class="feature-icon mb-3"><i class="bi bi-puzzle"></i></div>
+								<h3 class="h5 fw-bold">Свой набор блюд</h3>
+								<p class="card-text text-secondary">Более 30 блюд в меню: собирайте комбо из того, что любите.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="card h-100 border-0 shadow-sm rounded-4 text-center p-3">
+							<div class="card-body">
+								<div class="feature-icon mb-3"><i class="bi bi-box-seam"></i></div>
+								<h3 class="h5 fw-bold">Удобная упаковка</h3>
+								<p class="card-text text-secondary">Блюда приезжают горячими в герметичных контейнерах, упаковка бесплатно.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="card h-100 border-0 shadow-sm rounded-4 text-center p-3">
+							<div class="card-body">
+								<div class="feature-icon mb-3"><i class="bi bi-basket"></i></div>
+								<h3 class="h5 fw-bold">Свежие продукты</h3>
+								<p class="card-text text-secondary">Готовим в день доставки, есть вегетарианские блюда.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ЛР 10: дополнительный блок — шаги заказа и примеры блюд -->
+		<section class="py-5 bg-light" id="how">
+			<div class="container">
+				<h2 class="fw-bold text-center mb-5">Как заказать ланч</h2>
+
+				<div class="row g-4 align-items-center">
+					<div class="col-lg-5">
+						<ol class="list-unstyled d-grid gap-4 mb-0">
+							<li class="d-flex gap-3">
+								<span class="step-number">1</span>
+								<div>
+									<h3 class="h5 fw-bold mb-1">Выберите блюда</h3>
+									<p class="text-secondary mb-0">На странице «Собрать ланч» добавьте блюда из каждой категории.</p>
+								</div>
+							</li>
+							<li class="d-flex gap-3">
+								<span class="step-number">2</span>
+								<div>
+									<h3 class="h5 fw-bold mb-1">Оформите заказ</h3>
+									<p class="text-secondary mb-0">Укажите адрес, телефон и удобное время доставки.</p>
+								</div>
+							</li>
+							<li class="d-flex gap-3">
+								<span class="step-number">3</span>
+								<div>
+									<h3 class="h5 fw-bold mb-1">Получите обед</h3>
+									<p class="text-secondary mb-0">Курьер привезёт заказ, а изменить его можно на странице «Заказы».</p>
+								</div>
+							</li>
+						</ol>
+					</div>
+
+					<div class="col-lg-7">
+						<div class="row row-cols-2 row-cols-sm-3 g-3">
+							<div class="col"><img src="images/tomyum.jpg" alt="Том ям" class="img-fluid rounded-4 dish-photo"></div>
+							<div class="col"><img src="images/lasagna.jpg" alt="Лазанья" class="img-fluid rounded-4 dish-photo"></div>
+							<div class="col"><img src="images/caesar.jpg" alt="Цезарь с курицей" class="img-fluid rounded-4 dish-photo"></div>
+							<div class="col"><img src="images/shrimppasta.jpg" alt="Паста с креветками" class="img-fluid rounded-4 dish-photo"></div>
+							<div class="col"><img src="images/cappuccino.jpg" alt="Капучино" class="img-fluid rounded-4 dish-photo"></div>
+							<div class="col"><img src="images/chocolatecake.jpg" alt="Шоколадный торт" class="img-fluid rounded-4 dish-photo"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ЛР 10: призыв к действию (CTA) со ссылкой на «Собрать ланч» -->
+		<section class="py-5">
+			<div class="container">
+				<div class="cta rounded-5 p-4 p-md-5 text-white">
+					<div class="row align-items-center g-4">
+						<div class="col-lg-8 text-center text-lg-start">
+							<h2 class="fw-bold mb-2">Проголодались? Соберите свой ланч прямо сейчас</h2>
+							<p class="mb-0 fs-5 opacity-75">Первый обед будет у вас уже через час.</p>
+						</div>
+						<div class="col-lg-4 text-center text-lg-end">
+							<a href="lunch.html" class="btn btn-light btn-lg px-5 fw-bold text-brand">
+								Собрать ланч <i class="bi bi-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ЛР 10: форма обратной связи и контакты -->
+		<section class="py-5 bg-light" id="contacts">
+			<div class="container">
+				<h2 class="fw-bold text-center mb-5">Свяжитесь с нами</h2>
+
+				<div class="row g-4">
+					<div class="col-lg-7">
+						<form class="card border-0 shadow-sm rounded-4 p-4 needs-validation" id="feedback-form" novalidate>
+							<div class="row g-3">
+								<div class="col-md-6">
+									<label for="feedback-name" class="form-label">Имя</label>
+									<input type="text" class="form-control" id="feedback-name" name="name" required>
+									<div class="invalid-feedback">Укажите имя</div>
+								</div>
+
+								<div class="col-md-6">
+									<label for="feedback-email" class="form-label">Email</label>
+									<input type="email" class="form-control" id="feedback-email" name="email" required>
+									<div class="invalid-feedback">Укажите корректный email</div>
+								</div>
+
+								<div class="col-12">
+									<label for="feedback-topic" class="form-label">Тема</label>
+									<select class="form-select" id="feedback-topic" name="topic">
+										<option value="question">Вопрос о заказе</option>
+										<option value="corporate">Корпоративное питание</option>
+										<option value="feedback">Отзыв</option>
+										<option value="other">Другое</option>
+									</select>
+								</div>
+
+								<div class="col-12">
+									<label for="feedback-message" class="form-label">Сообщение</label>
+									<textarea class="form-control" id="feedback-message" name="message" rows="4" required></textarea>
+									<div class="invalid-feedback">Напишите сообщение</div>
+								</div>
+
+								<div class="col-12">
+									<button type="submit" class="btn btn-brand btn-lg w-100">Отправить</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<div class="col-lg-5">
+						<div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+							<h3 class="h5 fw-bold mb-4">Контакты</h3>
+							<ul class="list-unstyled d-grid gap-3 mb-4">
+								<li class="d-flex gap-3">
+									<i class="bi bi-telephone text-brand fs-5"></i>
+									<a href="tel:+70000000000" class="link-dark text-decoration-none">+7-000-000-00-00</a>
+								</li>
+								<li class="d-flex gap-3">
+									<i class="bi bi-envelope text-brand fs-5"></i>
+									<a href="mailto:hello@food-construct.example" class="link-dark text-decoration-none">hello@food-construct.example</a>
+								</li>
+								<li class="d-flex gap-3">
+									<i class="bi bi-geo-alt text-brand fs-5"></i>
+									<span>Москва, ул. Большая Семёновская, 38</span>
+								</li>
+								<li class="d-flex gap-3">
+									<i class="bi bi-clock text-brand fs-5"></i>
+									<span>Ежедневно с 7:00 до 23:00</span>
+								</li>
+							</ul>
+
+							<div class="d-flex gap-2 mt-auto">
+								<a href="#" class="btn btn-outline-dark rounded-circle social-link" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+								<a href="#" class="btn btn-outline-dark rounded-circle social-link" aria-label="ВКонтакте"><i class="bi bi-chat-dots"></i></a>
+								<a href="#" class="btn btn-outline-dark rounded-circle social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="bg-black text-white py-4">
+		<div class="container d-flex flex-column flex-md-row justify-content-between gap-2 text-center text-md-start">
+			<span>© 2026 Food Construct</span>
+			<span>Позвонить нам: <a href="tel:+70000000000" class="link-light text-decoration-none">+7-000-000-00-00</a></span>
+		</div>
+	</footer>
+
+	<!-- ЛР 10: уведомление (toast) после отправки формы обратной связи -->
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+		<div class="toast align-items-center text-bg-success border-0" id="feedback-toast" role="status" aria-live="polite" aria-atomic="true">
+			<div class="d-flex">
+				<div class="toast-body">Спасибо! Мы ответим вам в ближайшее время.</div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="scripts/landing.js"></script>
+
+</body>
+
+</html>

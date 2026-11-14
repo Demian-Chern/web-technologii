@@ -1,0 +1,87 @@
+/* ЛР 10: свои стили лендинга — только то, чего нет в Bootstrap */
+
+/* фирменный цвет сайта (tomato) вместо синего primary Bootstrap */
+:root {
+	--brand: #ff6347;
+	--brand-dark: #e0543a;
+	--bs-font-sans-serif: "Nunito", sans-serif;
+}
+
+.text-brand {
+	color: var(--brand) !important;
+}
+
+.btn-brand {
+	--bs-btn-color: #ffffff;
+	--bs-btn-bg: var(--brand);
+	--bs-btn-border-color: var(--brand);
+	--bs-btn-hover-color: #ffffff;
+	--bs-btn-hover-bg: var(--brand-dark);
+	--bs-btn-hover-border-color: var(--brand-dark);
+	--bs-btn-active-color: #ffffff;
+	--bs-btn-active-bg: var(--brand-dark);
+	--bs-btn-active-border-color: var(--brand-dark);
+}
+
+.navbar .nav-link:hover {
+	color: var(--brand);
+}
+
+/* при переходе по якорю заголовок не прячется под закреплённым меню */
+section[id] {
+	scroll-margin-top: 70px;
+}
+
+.hero {
+	background: linear-gradient(180deg, #fff3ef 0%, #ffffff 100%);
+}
+
+.hero__img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.feature-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #fff3ef;
+	font-size: 28px;
+	color: var(--brand);
+}
+
+.step-number {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background-color: var(--brand);
+	font-weight: 800;
+	color: #ffffff;
+}
+
+/* все фото блюд одинаковой формы, даже если исходники разного размера */
+.dish-photo {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+
+.cta {
+	background: linear-gradient(135deg, var(--brand) 0%, #ff9a5a 100%);
+}
+
+.social-link {
+	width: 44px;
+	height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
