@@ -1,3 +1,4 @@
+// ЛР 7: блюда загружаются с сервера через API, а не хранятся в коде
 const API_URL = 'https://web-basics-api-gagashaggy.msk1.amvera.tech';
 const API_KEY = '866a9480-db18-3e3e-86bd-9712e78b466c';
 
@@ -62,6 +63,7 @@ function getDishImage(dish) {
 		: `${API_URL}/labs/api/${dish.image}?api_key=${API_KEY}`;
 }
 
+// ЛР 7: GET-запрос списка блюд, при ошибке показывается уведомление
 async function loadDishes() {
 	try {
 		const response = await fetch(`${API_URL}/labs/api/dishes/default?api_key=${API_KEY}`);

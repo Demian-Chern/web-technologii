@@ -1,0 +1,207 @@
+/* ЛР 9: страница «Заказы» */
+
+.orders {
+	margin-top: 10px;
+	padding: 0 0 40px 0;
+}
+
+.orders__message {
+	margin: 0;
+}
+
+.orders__message a {
+	color: tomato;
+}
+
+/* на узких экранах таблица прокручивается внутри блока, а не вся страница */
+.orders__table-wrap {
+	overflow-x: auto;
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+}
+
+.orders__table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.orders__table th,
+.orders__table td {
+	padding: 14px 16px;
+	border-bottom: 1px solid #f1eee9;
+	text-align: left;
+	vertical-align: top;
+}
+
+.orders__table th {
+	font-size: 14px;
+	font-weight: 600;
+	color: #888888;
+	white-space: nowrap;
+}
+
+.orders__table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.orders__table tbody tr:hover {
+	background-color: #fbfaf8;
+}
+
+.orders__nowrap {
+	white-space: nowrap;
+}
+
+.orders__actions {
+	display: flex;
+	gap: 6px;
+}
+
+.orders__action {
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 2px solid #f1eee9;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 16px;
+	color: #222222;
+	cursor: pointer;
+}
+
+.orders__action:hover {
+	border-color: tomato;
+	color: tomato;
+}
+
+.orders__action--delete:hover {
+	background-color: tomato;
+	color: white;
+}
+
+/* Модальные окна. z-index ниже, чем у уведомления (100), чтобы ошибка была поверх окна */
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 50;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 40px 16px;
+	overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* при открытом окне страница под ним не прокручивается */
+body.modal-open {
+	overflow: hidden;
+}
+
+.modal__window {
+	width: 560px;
+	max-width: 100%;
+	margin: auto 0;
+	border-radius: 25px;
+	background-color: white;
+	box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+}
+
+.modal__window--small {
+	width: 420px;
+}
+
+.modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	padding: 20px 30px;
+	border-bottom: 1px solid #f1eee9;
+}
+
+.modal__title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.modal__close {
+	padding: 4px;
+	border: none;
+	background: none;
+	font-size: 18px;
+	color: #888888;
+	cursor: pointer;
+}
+
+.modal__close:hover {
+	color: tomato;
+}
+
+.modal__body {
+	padding: 20px 30px;
+}
+
+.modal__subtitle {
+	margin: 20px 0 10px 0;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.modal__footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 15px;
+	padding: 20px 30px;
+	border-top: 1px solid #f1eee9;
+}
+
+/* Пары «подпись — значение» в окнах просмотра и редактирования */
+.order-info {
+	display: grid;
+	grid-template-columns: 170px 1fr;
+	gap: 8px 15px;
+	margin: 0;
+}
+
+.order-info dt {
+	color: #888888;
+}
+
+.order-info dd {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.order-info__text {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.order-info__total {
+	margin: 20px 0 0 0;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+@media (max-width: 600px) {
+	.modal__header,
+	.modal__body,
+	.modal__footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.order-info {
+		grid-template-columns: 1fr;
+		gap: 2px;
+	}
+
+	.order-info dd {
+		margin-bottom: 8px;
+	}
+}

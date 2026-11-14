@@ -1,4 +1,5 @@
 // Страница «Собрать ланч»: меню и панель перехода к оформлению заказа
+// ЛР 8: форма перенесена на страницу «Оформить заказ», вместо неё закреплённая панель с суммой
 
 function displayDishes() {
 	// сортировка по названию в алфавитном порядке перед отображением
@@ -38,6 +39,7 @@ function selectDish(keyword) {
 	const dish = dishes.find(item => item.keyword === keyword);
 
 	selectedDishes[dish.category] = dish;
+	// ЛР 8: выбор сразу сохраняется в localStorage
 	saveOrder();
 	updateLunchPage();
 }
@@ -52,6 +54,7 @@ document.querySelectorAll('.menu__list').forEach(list => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
+	// ЛР 7: сначала загружаем блюда с сервера; ЛР 8: затем восстанавливаем выбор из localStorage
 	if (await loadDishes()) {
 		displayDishes();
 		restoreOrder();

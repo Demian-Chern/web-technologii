@@ -1,7 +1,8 @@
-// Страница «Оформить заказ»: состав заказа и отправка формы
+// ЛР 8: страница «Оформить заказ»: состав заказа и отправка формы на сервер
 
 const orderForm = document.querySelector('.order-form');
 
+// ЛР 8: карточки выбранных блюд с кнопкой «Удалить» и список блюд в форме
 function updateOrderPage() {
 	const selected = categories.filter(({ key }) => selectedDishes[key]);
 
@@ -21,6 +22,7 @@ function updateOrderPage() {
 	document.querySelector('#order-total-value').textContent = `${getOrderTotal()}₽`;
 }
 
+// ЛР 8: данные формы и id выбранных блюд в формате, который ждёт API
 function buildOrderData() {
 	const data = Object.fromEntries(new FormData(orderForm));
 
@@ -39,6 +41,7 @@ function buildOrderData() {
 	return data;
 }
 
+// ЛР 8: POST-запрос с заказом в формате JSON
 async function sendOrder(data) {
 	const response = await fetch(`${API_URL}/labs/api/orders?api_key=${API_KEY}`, {
 		method: 'POST',
@@ -87,6 +90,7 @@ orderForm.addEventListener('submit', async event => {
 	try {
 		await sendOrder(data);
 
+		// ЛР 8: при успешной отправке заказ удаляется из localStorage
 		clearOrder();
 		updateOrderPage();
 		orderForm.reset();
